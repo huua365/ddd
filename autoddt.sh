@@ -7,7 +7,7 @@ SUBNET=$(ip -o -f inet addr show | awk '/scope global/{sub(/[^.]+\//,"0/",$4);pr
 value=$(( 0xffffffff ^ ((1 << (32 - $SUBNET)) - 1) ))
 NETMASK="$(( (value >> 24) & 0xff )).$(( (value >> 16) & 0xff )).$(( (value >> 8) & 0xff )).$(( value & 0xff ))"
 
-wget --no-check-certificate -qO InstallNET.sh 'https://zhujiwiki.com/wp-content/uploads/2018/04/InstallNET.sh' && chmod a+x InstallNET.sh
+wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/huua365/dd/master/InstallNET.sh' && chmod a+x InstallNET.sh
 
 clear
 echo "                                                      "
